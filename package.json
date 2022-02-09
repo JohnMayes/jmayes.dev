@@ -6,9 +6,12 @@
   "dependencies": {
     "eslint": "^8.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "live-server"
   },
   "repository": {
     "type": "git",
