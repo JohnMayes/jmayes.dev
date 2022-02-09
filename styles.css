@@ -1,0 +1,236 @@
+:root {
+  --white: #fffafa;
+  --rich-black: #252525;
+  --light-grey: #b3b8bc;
+  --red: #e84f64;
+}
+
+/* -- GENERAL STYLES -- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+}
+
+section {
+  margin-bottom: 50vh;
+  scroll-margin-top: 10vh;
+}
+
+h1 {
+  color: var(--red);
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.full {
+  width: 100vw;
+  height: 100vh;
+}
+
+.column {
+  columns: 2;
+}
+
+#splash {
+  border: 5px solid black;
+  padding: 10vh 10vw 10vh 10vw;
+  text-align: center;
+}
+
+/* -- NAV -- */
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--rich-black);
+  z-index: 1;
+}
+
+nav ul {
+  display: flex;
+  margin-right: 3em;
+  list-style-type: none;
+}
+
+nav ul a {
+  display: block;
+  padding: 0 1em;
+  color: var(--light-grey);
+  text-decoration: none;
+}
+
+nav ul a:hover,
+nav ul a:focus {
+  text-decoration: underline;
+}
+
+/* -- MAIN GRID -- */
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    [viewport-start] minmax(1em, 1fr)
+    [container-start] minmax(0, 30em) [container-end]
+    minmax(1em, 1fr) [viewport-end];
+}
+
+.item--contained {
+  grid-column: container;
+}
+
+.item--full {
+  grid-column: viewport;
+  display: inherit;
+  grid-template-columns: inherit;
+}
+
+.item--full > * {
+  grid-column: container;
+}
+
+/* -- WORK CARDS -- */
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 20%;
+  min-width: 200px;
+  margin: 0 0 1rem 1rem;
+  border: 2px solid black;
+}
+
+.card a,
+.card a:visited,
+.card a:hover,
+.card a:active {
+  color: inherit;
+}
+
+.card:hover,
+.card:focus-within {
+  border: 2px solid var(--red);
+  color: var(--red);
+  box-shadow: 1px 1px 8px 1px var(--rich-black);
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.card_text {
+  text-align: center;
+  max-width: calc(100% - 30px);
+  font-weight: 600;
+}
+
+.card_img {
+  margin-top: 1em;
+}
+
+.card_svg {
+  width: auto;
+  height: 64px;
+}
+
+.card_description {
+  text-align: center;
+  color: var(--light-grey);
+  padding: 5px 15px;
+  border-top: 1px solid var(--dark-grey);
+  background-color: var(--rich-black);
+}
+
+/* -- CONTACT FORM -- */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  padding: 1em 0;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  background-color: var(--white);
+  border: 2px solid var(--rich-black);
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--light-grey);
+  box-shadow: 1px 1px 8px 1px var(--rich-black);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--light-grey);
+  box-shadow: 1px 1px 8px 1px var(--rich-black);
+}
+
+textarea {
+  height: auto;
+}
+
+.form-button {
+  margin: 1em 0;
+  background-color: var(--rich-black);
+  color: var(--light-grey);
+  font-size: 1.2em;
+  border: 2px solid var(--rich-black);
+  cursor: pointer;
+}
+
+.form-button:hover,
+.form-button:focus {
+  color: var(--white);
+  box-shadow: 1px 1px 8px 1px var(--rich-black);
+}
+
+#contact a:hover,
+#contact a:focus {
+  text-decoration: underline;
+}
+
+/* -- FOOTER --*/
+
+footer {
+  background-color: var(--rich-black);
+  color: var(--white);
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="normalize.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>John Mayes</title>
+  </head>
+
+  <body>
+    <header class="center full">
+      <div id="splash">
+        <h1>JOHN MAYES</h1>
+        <p>Developer Portfolio</p>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section id="about" class="item item--contained">
+        <h2>About Me</h2>
+        <p>
+          I am a self-taught JavaScript developer seeking a career change into
+          web development. I have a love for learning and find satisfaction in
+          applying new skills well. I have a strongly instilled team-oriented
+          work ethos — I desire team success, not just personal success. I have
+          an eye for beauty and excellence – websites can be beautiful, code can
+          excellent.
+        </p>
+        <h3>Technical Skills</h3>
+        <ul class="column">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Unit Testing and Debug</li>
+          <li>Responsive Web Design</li>
+          <li>Functional Programming</li>
+          <li>Time management</li>
+          <li>Problem Solving</li>
+        </ul>
+      </section>
+
+      <section id="work" class="item item--contained">
+        <h2>My Work</h2>
+
+        <div class="cards">
+          <div class="card" id="priority-app">
+            <a href="https://johnmayes.github.io/Prioritize-It/">
+              <div class="card_content">
+                <div class="card_text">Priority App</div>
+                <div class="card_img">
+                  <img src="Assets/clipboard-list.svg" class="card_svg" />
+                </div>
+              </div>
+              <div class="card_description">JavaScript</div>
+            </a>
+          </div>
+
+          <div class="card" id="chess-app">
+            <a href="https://github.com/JohnMayes/react-chess">
+              <div class="card_content">
+                <div class="card_text">Chess Game</div>
+                <div class="card_img">
+                  <img src="Assets/knight-black.svg" class="card_svg" />
+                </div>
+              </div>
+              <div class="card_description">React, TypeScript</div>
+            </a>
+          </div>
+
+          <div class="card" id="js-cert">
+            <a
+              href="https://www.freecodecamp.org/certification/johnmayes/javascript-algorithms-and-data-structures"
+            >
+              <div class="card_content">
+                <div class="card_text">Algorithms and Data Structures</div>
+                <div class="card_img">
+                  <img src="Assets/js.svg" class="card_svg" />
+                </div>
+              </div>
+              <div class="card_description">FreeCodeCamp Certification</div>
+            </a>
+          </div>
+
+          <div class="card" id="design-cert">
+            <a
+              href="https://www.freecodecamp.org/certification/johnmayes/responsive-web-design"
+            >
+              <div class="card_content">
+                <div class="card_text">Responsive Web Design</div>
+                <div class="card_img">
+                  <img src="Assets/responsive.svg" class="card_svg" />
+                </div>
+              </div>
+              <div class="card_description">FreeCodeCamp Certification</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="item item--contained">
+        <h2>Contact Me</h2>
+        <p>
+          Please get in touch using the contact form below. You may also view my
+          <a href="https://github.com/JohnMayes/">GitHub</a>,
+          <a href="https://www.linkedin.com/in/john-mayes-712350221/"
+            >LinkedIn</a
+          >, or a hard copy of my <a href="">resume</a>.
+        </p>
+        <form id="contactform" method="POST" class="" action="">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="_replyto"
+            placeholder="example@example.com"
+            required
+          />
+          <label for="message">Message</label>
+          <textarea id="message" rows="8" name="message" required></textarea>
+          <input
+            type="submit"
+            id="submit"
+            name="submit"
+            value="Send"
+            class="form-button"
+          />
+        </form>
+        <p></p>
+      </section>
+
+      <footer class="item item--full full">
+        <blockquote class="center">
+          And whatever you do, do it heartily, as to the Lord and not to men,
+          knowing that from the Lord you will receive the reward of the
+          inheritance; for you serve the Lord Christ.
+        </blockquote>
+      </footer>
+    </main>
+  </body>
+</html>
