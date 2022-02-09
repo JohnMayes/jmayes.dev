@@ -1,0 +1,26 @@
+{
+  "name": "jmayes.dev",
+  "version": "1.0.0",
+  "description": "Web portfolio",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^8.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnMayes/jmayes.dev.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "John Mayes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohnMayes/jmayes.dev/issues"
+  },
+  "homepage": "https://github.com/JohnMayes/jmayes.dev#readme"
+}
