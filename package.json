@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Web portfolio",
   "main": "index.js",
-  "dependencies": {
-    "eslint": "^8.8.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "eslint": "^8.8.0",
     "live-server": "^1.2.1"
   },
   "scripts": {
