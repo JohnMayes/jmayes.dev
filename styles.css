@@ -175,8 +175,9 @@ nav ul a:focus {
 }
 
 /* -- CONTACT FORM -- */
+/* IMPLEMENT FORM PHP */
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
 }
@@ -226,7 +227,7 @@ textarea {
 #contact a:hover,
 #contact a:focus {
   text-decoration: underline;
-}
+} */
 
 /* -- FOOTER --*/
 
