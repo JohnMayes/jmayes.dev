@@ -1,2 +1,3 @@
 # jmayes.dev
-My portfolio and resume
+
+This is where my portfolio lives.
