@@ -19,7 +19,7 @@
       <nav>
         <ul>
           <li>
-            <a href="/index.html">Home</a>
+            <a href="/index.html" class="red-text">John Mayes</a>
           </li>
           <li>
             <a href="blog.html">Archive</a>
@@ -29,8 +29,140 @@
     </header>
 
     <main class="grid">
-      <section id="work" class="item item--contained">
+      <section id="title" class="item item--contained">
         <h1>Making a Responsive Chessboard</h1>
+        <p>
+          Setting a grid container's children as flex items, in combination with
+          the <code>aspect-ratio</code> property, allows for a responsive,
+          smoothly scaling fixed-grid layout.
+        </p>
+      </section>
+
+      <section id="post_body" class="item item--contained">
+        <p>
+          I ran into an issue where I needed to create a CSS grid layout with a
+          fixed number of columns and rows (in this case, an 8 x 8 grid), with
+          the following requirements:
+        </p>
+        <ul>
+          <li>The grid container must shrink and grow responsively.</li>
+          <li>The grid container must maintain it's aspect ratio.</li>
+          <li>The grid items must also shrink and grow responsively.</li>
+          <li>The grid items must also maintain their own aspect ratios.</li>
+          <li>
+            The grid items' children (in this case, SVGs) must also shrink and
+            grow responsively.
+          </li>
+        </ul>
+        <p>
+          The specific use case for this layout is to create a responsive
+          chessboard that sizes based on the user's viewport. Here is the final
+          result:
+        </p>
+
+        <img src="blarg.gif" />
+
+        <p>And here is how I got there.</p>
+
+        <h2>The HTML</h2>
+        <p>
+          The actual code I am working with uses React with functional
+          components to dynamically generate each square of the chessboard,
+          along with is classes, which are then displayed as a grid. For the
+          purposes of this demo, however, we can just use some hand-jammed HTML:
+        </p>
+        <pre>
+  <code>
+  &lt;h1&gt;Chessboard&lt;/h1&gt;
+
+  &lt;div class="board"&gt;
+    &lt;div class="square white" id="1"&gt;&lt;/div&gt;
+    &lt;div class="square black" id="2"&gt;&lt;/div&gt;
+    &lt;div class="square white" id="3"&gt;&lt;/div&gt;
+
+    ...
+
+    &lt;div class="square white" id="64"&gt;&lt;/div&gt;
+  </code>
+        </pre>
+
+        <p>We now have one "board" div with 64 squares as children.</p>
+
+        <h2>The Grid Container</h2>
+        <p>
+          We are going to use <code>grid-template-columns: repeat</code> to
+          create a grid layout of 8 columns (the width of a chessboard), with
+          each column taking up <code>1fr</code> of available space. The 64 divs
+          we created earlier will then fill in our gird from left to right, top
+          to bottom, to from a nice 8 x 8 grid. However, the grid items are
+          currently empty, so nothing will display! Let's set the height and
+          width of the grid items to something arbitrary, say 40 pixels, and
+          then inspect with dev tools to see our grid in action.
+        </p>
+
+        <img src="the-grid.png" />
+
+        <p>
+          Getting somewhere. However, nothing is yet responsive. Let's change
+          that.
+        </p>
+
+        <h2>The Grid Items</h2>
+        <p>
+          First, we are going to change the grid item's <code>height</code> and
+          <code>width</code> to <code>auto</code>. This will keep each element
+          the same height and width as its parent container (the grid track) —
+          which is currently nothing, so again, nothing will display. In order
+          to see anything rendered,
+          <em>the grid container must have an explicit width.</em>
+        </p>
+        <p>
+          In order to make the grid responsive, we can set the container's width
+          to a <em>relative unit of measurement.</em> In this case I chose
+          <code>60vw</code>. Now the width grid container will grow and shrink
+          responsively, relative to the width of the user's viewport.
+        </p>
+        <p>
+          Almost there. However, as we are still lacking an explicit height, so,
+          again, (almost) nothing is being displayed. This is where
+          <code>aspect-ratio</code> comes into play. The
+          <code>aspect-ratio</code> CSS property directly specifies a fixed
+          width to height aspect ratio for an element. It also does not rely on
+          parent size or viewport size: it relies on the element's own width or
+          height. For a perfect square (what we need in this case), use
+          <code>aspect-ratio: 1 / 1</code>.
+        </p>
+
+        <p>Now,</p>
+
+        <p>
+          Finally, setting the grid items to <code>display: flex</code> will...
+        </p>
+
+        <h2>The SVG elements</h2>
+
+        <p>
+          Explaining SVG scaling in detail is beyond the scope of this article.
+          The TLDR is that in order for an SVG element to scale proportionally
+          with the size of it's parent element, while maintaining it's aspect
+          ratio, the <code>width</code> and <code>height</code> values of the
+          SVG's <code>viewBox</code> attribute need to equal the width and
+          height of the coordinate system used in the SVG element itself (i.e,
+          <code>viewBox="0 0 [original svg width] [original svg height]"</code
+          >). Next, remove any height and width properties on the SVG element
+          itself — the SVG will then scale to fill the available space in it's
+          parent element, while automatically preserving it's aspect ratio.
+        </p>
+
+        <p>
+          In this case, I know that the SVGs I am working with have a width and
+          height of 45 coordinate points, so I set the <code>viewBox</code> like
+          so:
+        </p>
+
+        <h2>Bonus: a little more mobile responsiveness</h2>
+
+        <h2>Helpful links</h2>
       </section>
 
       <footer class="item item--full full">

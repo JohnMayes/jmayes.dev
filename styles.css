@@ -15,6 +15,7 @@ body {
   background-color: var(--white);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
+  line-height: 1.4em;
 }
 
 section {
@@ -24,6 +25,7 @@ section {
 
 h1 {
   color: var(--red);
+  line-height: 1.2em;
 }
 
 h2,
@@ -177,10 +179,14 @@ nav a:focus {
   background-color: var(--rich-black);
 }
 
+/* -- FOOTER -- */
+
 footer {
   background-color: var(--rich-black);
   color: var(--white);
 }
+
+/* -- MEDIA -- */
 
 @media (max-width: 480px) {
   nav {

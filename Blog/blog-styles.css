@@ -3,6 +3,7 @@
   --rich-black: #252525;
   --light-grey: #b3b8bc;
   --red: #e84f64;
+  --code: rgba(0, 0, 0, 0.1);
 }
 
 /* -- GENERAL STYLES -- */
@@ -15,21 +16,50 @@ body {
   background-color: var(--white);
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2em;
+  line-height: 1.4em;
 }
 
 section {
   margin-top: 10vh;
-  margin-bottom: 50vh;
 }
 
 h1,
 h2,
 h3 {
   text-align: center;
+  line-height: 1.4em;
 }
 
 a {
   text-decoration: none;
+}
+
+/* Code in text */
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: var(--code);
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.2rem;
+  font-family: monospace;
+}
+
+pre {
+  clear: both;
+  background: var(--code);
+  padding: 0;
+  tab-size: 2;
+  word-break: normal;
+  hyphens: none;
+  overflow: hidden;
+  font-size: 0.8rem;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  line-height: 1em;
 }
 
 .red-text {
@@ -52,17 +82,18 @@ a {
   columns: 2;
 }
 
-#splash {
-  border: 5px solid black;
-  padding: 10vh 10vw 10vh 10vw;
+#title {
+  border: 5px solid #000000;
+  padding: 5vh 5vw;
   text-align: center;
+  margin-top: 20vh;
 }
 
 /* -- NAV -- */
 
 nav {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   position: fixed;
   top: 0;
   left: 0;
@@ -98,7 +129,7 @@ nav a:focus {
   display: grid;
   grid-template-columns:
     [viewport-start] minmax(1em, 1fr)
-    [container-start] minmax(0, 30em) [container-end]
+    [container-start] minmax(0, 80%) [container-end]
     minmax(1em, 1fr) [viewport-end];
 }
 
@@ -121,7 +152,8 @@ nav a:focus {
 .cards {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -129,6 +161,7 @@ nav a:focus {
   flex-direction: column;
   flex: 1 0 20%;
   min-width: 200px;
+  max-width: 250px;
   margin: 0 0 1rem 1rem;
   border: 2px solid black;
 }
@@ -177,6 +210,8 @@ nav a:focus {
   border-top: 1px solid var(--dark-grey);
   background-color: var(--rich-black);
 }
+
+/* -- FOOTER -- */
 
 footer {
   background-color: var(--rich-black);
