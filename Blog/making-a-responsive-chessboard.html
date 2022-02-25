@@ -30,6 +30,7 @@
 
     <main class="grid">
       <section id="title" class="item item--contained">
+        <p class="smaller-text">2/25/2022</p>
         <h1>Making a Responsive Chessboard</h1>
         <p>
           Sizing a grid container using relative units, in combination with the
@@ -60,7 +61,37 @@
           result:
         </p>
 
-        <img src="blarg.gif" />
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="css,result"
+          data-slug-hash="zYPLLqq"
+          data-preview="true"
+          data-user="JohnMayes"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/JohnMayes/pen/zYPLLqq">
+              Responsive Chessboard</a
+            >
+            by John Mayes (<a href="https://codepen.io/JohnMayes">@JohnMayes</a
+            >) on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
 
         <p>Here is the basic CSS:</p>
         <pre>
@@ -84,7 +115,7 @@
         </pre>
 
         <p>Here is the TLDR:</p>
-        <blockquote class="tldr">
+        <blockquote class="smaller-text">
           We start with a grid container with 8 columns and 8 rows, each taking
           up <code>1fr</code> of space. The width of the container is
           responsively calculated based on the width of the user's viewport. The
@@ -211,8 +242,6 @@
           Nice!
         </p>
 
-        <p>Here again is the final result:</p>
-
         <h2>Bonus: a little more mobile responsiveness</h2>
         <p>
           Let's change the unit of measurement used to calculate our grid width
@@ -222,6 +251,38 @@
           always be fully visible, wether or not the device is in portrait or
           landscape mode. No media queries required.
         </p>
+        <p>Again, here is the final result:</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="css,result"
+          data-slug-hash="zYPLLqq"
+          data-preview="true"
+          data-user="JohnMayes"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/JohnMayes/pen/zYPLLqq">
+              Responsive Chessboard</a
+            >
+            by John Mayes (<a href="https://codepen.io/JohnMayes">@JohnMayes</a
+            >) on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
       </section>
 
       <footer class="item item--full full">
