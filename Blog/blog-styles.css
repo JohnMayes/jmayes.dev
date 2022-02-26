@@ -171,7 +171,7 @@ nav a:focus {
   flex-direction: column;
   flex: 1 0 20%;
   min-width: 200px;
-  max-width: 250px;
+  max-width: 300px;
   margin: 0 0 1rem 1rem;
   border: 2px solid black;
 }
@@ -204,21 +204,11 @@ nav a:focus {
   font-weight: 600;
 }
 
-.card_img {
-  margin-top: 1em;
-}
-
-.card_svg {
-  width: auto;
-  height: 64px;
-}
-
 .card_description {
   text-align: center;
-  color: var(--light-grey);
   padding: 5px 15px;
   border-top: 1px solid var(--dark-grey);
-  background-color: var(--rich-black);
+  color: #000000;
 }
 
 /* -- FOOTER -- */
